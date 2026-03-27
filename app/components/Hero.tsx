@@ -1,10 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { Zap, MapPin, Calendar, Building, PhoneCall, FileText, ArrowRight } from "lucide-react";
 import { Button } from "./ui/Button";
 import { Countdown } from "./Countdown";
+import { RegistrationModal } from "./RegistrationModal";
 
 export function Hero() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
         <section className="relative w-full overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-blue-950 pb-20 pt-16">
             <div className="max-w-7xl mx-auto px-6 lg:px-12 h-full">
@@ -20,9 +25,10 @@ export function Hero() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-[56px] font-black tracking-tight text-white mb-6 leading-[1.2]">
-                            <span className="block w-full">Giải Pháp RFID <span className="whitespace-nowrap">tích hợp AI</span></span>
-                            <span className="block mt-1 xl:mt-2 text-cyan-400">tự động</span>
+                        <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-[56px] font-black tracking-tight text-white mb-6 leading-[1.05]">
+                            <span className="block w-full">Giải Pháp RFID</span>
+                            <span className="block w-full">tích hợp AI</span>
+                            <span className="block mt-2 text-cyan-400">tự động</span>
                         </h1>
 
                         <p className="mt-4 text-[17px] text-blue-100 max-w-lg mb-10 leading-relaxed font-medium">
@@ -68,6 +74,7 @@ export function Hero() {
                         <div className="flex flex-col sm:flex-row items-center gap-4 w-full animate-fade-in delay-150">
                             <Button 
                                 variant="primary" 
+                                onClick={() => setIsModalOpen(true)}
                                 className="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-600 text-black border-0 rounded-xl px-8 h-12 shadow-cyan-500/20 shadow-lg text-[15px]"
                             >
                                 <FileText className="w-4 h-4" />
@@ -76,6 +83,7 @@ export function Hero() {
                             </Button>
                             <Button 
                                 variant="ghost" 
+                                onClick={() => setIsModalOpen(true)}
                                 className="w-full sm:w-auto border border-white/20 hover:bg-white/10 text-white rounded-xl px-8 h-12 text-[15px]"
                             >
                                 <PhoneCall className="w-4 h-4" />
@@ -84,22 +92,36 @@ export function Hero() {
                         </div>
                     </div>
 
-                    {/* Right Column (Reference Image) */}
-                    <div className="hidden lg:flex justify-end w-full animate-in fade-in zoom-in-95 duration-700 h-full py-8">
-                        <div className="relative w-full max-w-xl aspect-square xl:h-[600px] xl:w-[600px]">
+                    {/* Right Column (Reference Images) */}
+                    <div className="hidden lg:flex justify-end items-center w-full animate-in fade-in zoom-in-95 duration-700 h-full py-8">
+                        <div className="relative w-full max-w-[500px] xl:max-w-[580px] aspect-[10/9] lg:aspect-square">
                             {/* Decorative blur blob */}
-                            <div className="absolute inset-0 bg-cyan-500/20 blur-[100px] rounded-full translate-x-12 translate-y-12 mix-blend-screen" />
+                            <div className="absolute inset-0 bg-cyan-500/20 blur-[100px] rounded-full translate-x-8 translate-y-8 mix-blend-screen" />
                             
-                            <div className="relative h-full w-full rounded-[24px] overflow-hidden shadow-2xl border border-white/10 shadow-blue-900/50">
+                            {/* Main Background Image (image1.jpg) */}
+                            <div className="absolute top-0 right-0 w-[85%] h-[85%] rounded-[24px] overflow-hidden shadow-2xl border border-white/10 shadow-blue-900/50 z-10 hover:z-30 transition-all duration-500 hover:scale-[1.05] hover:-translate-x-2 hover:translate-y-2 cursor-pointer group">
                                 <Image
-                                    src="/booth.png"
+                                    src="/image1.jpg"
+                                    alt="Nextwaves Exhibition Team"
+                                    fill
+                                    priority
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-105 contrast-125"
+                                />
+                                {/* Blue-ish gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent opacity-80 pointer-events-none transition-opacity duration-500 group-hover:opacity-40" />
+                            </div>
+
+                            {/* Foreground Overlapping Image (image3.jpg) */}
+                            <div className="absolute bottom-4 left-0 w-[65%] h-[60%] rounded-[24px] overflow-hidden shadow-2xl border-4 border-blue-900/80 shadow-black/50 z-20 hover:z-30 transition-all duration-500 hover:scale-[1.05] hover:translate-x-2 hover:-translate-y-2 cursor-pointer group">
+                                <Image
+                                    src="/image3.jpg"
                                     alt="Nextwaves Exhibition Booth"
                                     fill
                                     priority
-                                    className="object-cover hover:scale-105 transition-transform duration-700 ease-out brightness-105 contrast-125"
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out brightness-105 contrast-125"
                                 />
-                                {/* Blue-ish gradient overlay to match image vibe */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 via-transparent to-transparent" />
+                                {/* Blue-ish gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent opacity-60 pointer-events-none transition-opacity duration-500 group-hover:opacity-20" />
                             </div>
                         </div>
                     </div>
@@ -109,6 +131,8 @@ export function Hero() {
             {/* Background design elements */}
             <div className="absolute top-0 right-0 w-[50vw] h-[50vh] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none -z-10" />
             <div className="absolute bottom-0 left-0 w-[50vw] h-[50vh] bg-cyan-600/5 blur-[120px] rounded-full pointer-events-none -z-10" />
+            
+            <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </section>
     );
 }

@@ -9,7 +9,7 @@ export function WhyChooseUs() {
     <section className="bg-white dark:bg-zinc-50 w-full py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+        <div className="text-center max-w-4xl mx-auto mb-20 flex flex-col items-center">
           <div className="bg-blue-50 text-blue-600 text-[11px] font-bold px-4 py-1.5 rounded-full tracking-wider uppercase mb-6">
             Tại Sao Chọn Nextwaves
           </div>
@@ -19,7 +19,7 @@ export function WhyChooseUs() {
           <h3 className="text-lg md:text-xl font-semibold text-blue-600 mb-4">
             Bình Dân Hóa Công Nghệ
           </h3>
-          <p className="text-[16px] text-zinc-600 font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[16px] text-center text-zinc-600 font-medium leading-relaxed w-full">
             Nextwaves đưa RFID gần hơn với doanh nghiệp Việt Nam thông qua giá cạnh tranh, triển khai nhanh, và hỗ trợ toàn diện
           </p>
         </div>
@@ -69,9 +69,16 @@ export function WhyChooseUs() {
 
         {/* Row 2: Solution */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image Left */}
-          <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl">
-            <Image src="/image2.jpg" alt="Giải pháp Nextwaves" fill unoptimized className="object-cover hover:scale-105 transition-transform duration-700" />
+          {/* Video Left */}
+          <div className="relative w-full aspect-[4/3] rounded-[24px] overflow-hidden shadow-2xl bg-zinc-900">
+            <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.youtube.com/embed/GtzC0j7FzmY?autoplay=0&rel=0"
+              title="Xây Dựng Hệ Sinh Thái RFID Made in Vietnam"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
 
           {/* Text Right */}

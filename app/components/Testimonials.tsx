@@ -43,7 +43,7 @@ export function Testimonials() {
     <section className="bg-zinc-50 dark:bg-zinc-900 w-full py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header Section */}
-        <div className="text-center max-w-2xl mx-auto mb-16 flex flex-col items-center">
+        <div className="text-center max-w-4xl w-full mx-auto mb-16 flex flex-col items-center">
           <div className="bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold px-4 py-1.5 rounded-full tracking-wider uppercase mb-6">
             Khách Hàng Nói Gì
           </div>
@@ -70,29 +70,9 @@ export function Testimonials() {
               </div>
 
               {/* Quote */}
-              <p className="text-[14px] text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium mb-8 flex-grow">
+              <p className="text-[14px] text-zinc-600 dark:text-zinc-300 leading-relaxed font-medium flex-grow">
                 "{item.quote}"
               </p>
-
-              <hr className="border-zinc-100 dark:border-white/5 mb-6" />
-
-               {/* Profile */}
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-zinc-100 dark:bg-zinc-800 rounded-full flex items-center justify-center text-2xl flex-shrink-0">
-                  {item.avatar}
-                </div>
-                <div>
-                  <h4 className="text-[15px] font-bold text-zinc-900 dark:text-white leading-tight">
-                    {item.name}
-                  </h4>
-                  <p className="text-[12px] text-zinc-500 dark:text-zinc-400 mt-1 leading-tight">
-                    {item.role}
-                  </p>
-                  <p className="text-[12px] text-blue-600 dark:text-blue-400 font-semibold mt-0.5 leading-tight">
-                    {item.company}
-                  </p>
-                </div>
-              </div>
             </div>
           ))}
         </div>
@@ -110,7 +90,7 @@ export function Testimonials() {
           </div>
           
           <div className="text-center">
-            <h3 className="text-5xl lg:text-6xl font-black text-white mb-2 tracking-tight">100K+</h3>
+            <h3 className="text-5xl lg:text-6xl font-black text-white mb-2 tracking-tight">100+</h3>
             <p className="text-blue-100 font-medium text-[15px]">Bộ Kit</p>
           </div>
         </div>

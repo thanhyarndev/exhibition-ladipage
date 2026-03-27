@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-grow w-full bg-white dark:bg-zinc-50">
       <Hero />
-      <WhyChooseUs />
       <StarterKits />
+      <WhyChooseUs />
       <Products />
       <Testimonials />
       <Benefits />

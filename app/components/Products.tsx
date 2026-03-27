@@ -16,7 +16,8 @@ export function Products() {
         "Tốc độ đọc nhanh",
         "Kết nối MQTT/REST",
         "Thiết kế chắc chắn"
-      ]
+      ],
+      image: "/image4.jpg"
     },
     {
       id: "tags",
@@ -28,7 +29,8 @@ export function Products() {
         "Giá cạnh tranh",
         "Chất lượng cao",
         "Tuân thủ tiêu chuẩn"
-      ]
+      ],
+      image: "/image5.jpg"
     },
     {
       id: "applications",
@@ -40,7 +42,8 @@ export function Products() {
         "Máy quét handheld",
         "Cổng RFID",
         "Phần mềm tích hợp"
-      ]
+      ],
+      image: "/image6.jpg"
     }
   ];
 
@@ -62,30 +65,47 @@ export function Products() {
           {products.map((product) => (
             <div 
               key={product.id} 
-              className="flex flex-col bg-white rounded-xl border border-zinc-200 p-8 hover:shadow-lg transition-shadow duration-300"
+              className="flex flex-col bg-white rounded-2xl border border-zinc-200 overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
-              {/* Icon */}
-              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                {product.icon}
+              {/* Product Image */}
+              <div className="relative w-full h-56 sm:h-64 bg-white border-b border-zinc-100 overflow-hidden flex justify-center items-center p-6">
+                <div className="relative w-full h-full">
+                  <Image 
+                    src={product.image}
+                    alt={product.title}
+                    fill
+                    className="object-contain hover:scale-110 transition-transform duration-700"
+                  />
+                </div>
               </div>
 
-              {/* Title & Description */}
-              <h3 className="text-xl font-bold text-zinc-900 mb-3">
-                {product.title}
-              </h3>
-              <p className="text-[15px] text-zinc-500 leading-relaxed mb-8 h-12">
-                {product.description}
-              </p>
+              {/* Content Area */}
+              <div className="flex flex-col flex-grow p-8 pt-6">
+                {/* Icon */}
+                <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex flex-shrink-0 items-center justify-center mb-6">
+                  {product.icon}
+                </div>
 
-              {/* Features List */}
-              <ul className="space-y-3 mt-auto">
-                {product.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-[14px] font-medium text-zinc-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+                {/* Title & Description */}
+                <h3 className="text-xl font-bold text-zinc-900 mb-3">
+                  {product.title}
+                </h3>
+                <p className="text-[15px] text-zinc-500 leading-relaxed mb-6 flex-grow">
+                  {product.description}
+                </p>
+
+                <hr className="border-zinc-100 mb-6" />
+
+                {/* Features List */}
+                <ul className="space-y-3 mt-auto">
+                  {product.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3 text-[14px] font-medium text-zinc-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

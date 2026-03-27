@@ -18,7 +18,8 @@ export function StarterKits() {
         "Máy quét cầm tay"
       ],
       price: "$980",
-      image: "/retail_kit.png"
+      image: "/retail_kit.png",
+      link: "https://nextwaves.com/vi/starter-kits/retail"
     },
     {
       id: "warehouse",
@@ -32,7 +33,8 @@ export function StarterKits() {
         "Tìm kiếm hàng hóa tức thì"
       ],
       price: "$1.490",
-      image: "/warehouse_kit.png"
+      image: "/warehouse_kit.png",
+      link: "https://nextwaves.com/vi/starter-kits/warehouse"
     },
     {
       id: "security",
@@ -46,7 +48,8 @@ export function StarterKits() {
         "Theo dõi kiểm toán tự động"
       ],
       price: "$1.370",
-      image: "/security_kit.png"
+      image: "/security_kit.png",
+      link: "https://nextwaves.com/vi/starter-kits/security"
     }
   ];
 
@@ -124,12 +127,15 @@ export function StarterKits() {
                       {kit.price}
                     </span>
                   </div>
-                  
-                  <button className="inline-flex items-center gap-2 text-[15px] font-bold text-blue-600 hover:text-blue-700 transition-colors group">
-                    <PhoneCall className="w-4 h-4" />
-                    Đặt Lịch Xem
+                  <a 
+                    href={kit.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-2 text-[15px] font-bold text-blue-600 hover:text-blue-700 transition-colors group"
+                  >
+                    Tìm Hiểu Thêm
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
