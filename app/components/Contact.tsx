@@ -15,7 +15,7 @@ export function Contact() {
             <h2 className="text-3xl md:text-4xl font-black text-white flex items-center gap-3 mb-4 tracking-tight">
               <span className="text-4xl"></span> Liên Hệ
             </h2>
-            <p className="text-blue-100 font-medium text-[16px] max-w-2xl leading-relaxed">
+            <p className="text-blue-100 font-medium text-[16px] max-w-3xl leading-relaxed">
               Hãy liên hệ với chúng tôi để tìm hiểu thêm về các giải pháp RFID hoặc để đặt lịch demo trực tuyến.
             </p>
           </div>

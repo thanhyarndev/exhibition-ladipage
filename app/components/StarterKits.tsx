@@ -17,7 +17,7 @@ export function StarterKits() {
         "2.000 thẻ RFID",
         "Máy quét cầm tay"
       ],
-      price: "$980",
+      price: "21.200.000 VNĐ",
       image: "/retail_kit.png",
       link: "https://nextwaves.com/vi/starter-kits/retail"
     },
@@ -32,7 +32,7 @@ export function StarterKits() {
         "Bản đồ kho bằng số",
         "Tìm kiếm hàng hóa tức thì"
       ],
-      price: "$1.490",
+      price: "23.200.000 VNĐ",
       image: "/warehouse_kit.png",
       link: "https://nextwaves.com/vi/starter-kits/warehouse"
     },
@@ -47,14 +47,14 @@ export function StarterKits() {
         "Thẻ chống kim loại",
         "Theo dõi kiểm toán tự động"
       ],
-      price: "$1.370",
+      price: "48.550.000 VNĐ",
       image: "/security_kit.png",
       link: "https://nextwaves.com/vi/starter-kits/security"
     }
   ];
 
   return (
-    <section className="bg-white dark:bg-zinc-50 w-full py-24">
+    <section id="starter-kits" className="bg-white dark:bg-zinc-50 w-full py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -118,12 +118,12 @@ export function StarterKits() {
                 <hr className="border-zinc-100 mb-6" />
 
                 {/* Footer: Price & Action */}
-                <div className="flex items-end justify-between">
-                  <div className="flex flex-col">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1">
-                      Giá bắt đầu từ
+                <div className="flex items-end justify-between gap-2 overflow-hidden">
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1 truncate">
+                      Giá chỉ từ
                     </span>
-                    <span className="text-3xl font-black text-zinc-900 tracking-tight">
+                    <span className="text-[18px] xl:text-xl font-black text-zinc-900 tracking-tight whitespace-nowrap">
                       {kit.price}
                     </span>
                   </div>
@@ -131,10 +131,10 @@ export function StarterKits() {
                     href={kit.link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-flex items-center gap-2 text-[15px] font-bold text-blue-600 hover:text-blue-700 transition-colors group"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-bold text-blue-600 hover:text-blue-700 transition-colors group whitespace-nowrap flex-shrink-0 mb-0.5"
                   >
                     Tìm Hiểu Thêm
-                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>

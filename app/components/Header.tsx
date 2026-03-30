@@ -2,15 +2,16 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { PhoneCall, FileText } from "lucide-react";
 import { Button } from "./ui/Button";
 
 export function Header() {
     const navLinks = [
-        { name: "Giải Pháp", href: "#" },
-        { name: "Starter Kits", href: "#" },
-        { name: "Sản Phẩm", href: "#" },
-        { name: "Câu Chuyện", href: "#" },
+        { name: "Giải Pháp", href: "#giai-phap" },
+        { name: "Starter Kits", href: "#starter-kits" },
+        { name: "Sản Phẩm", href: "#san-pham" },
+        { name: "Câu Chuyện", href: "#cau-chuyen" },
     ];
 
     return (
@@ -18,8 +19,15 @@ export function Header() {
             <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
                 {/* Logo Section */}
                 <div className="flex items-center">
-                    <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-500 tracking-tight">
-                        Nextwaves
+                    <Link href="/" className="block">
+                        <Image 
+                            src="/logo.png" 
+                            alt="Nextwaves Logo" 
+                            width={180} 
+                            height={48} 
+                            className="h-10 lg:h-[44px] w-auto object-contain"
+                            priority
+                        />
                     </Link>
                 </div>
 

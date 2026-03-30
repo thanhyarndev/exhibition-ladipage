@@ -17,7 +17,7 @@ export function Products() {
         "Kết nối MQTT/REST",
         "Thiết kế chắc chắn"
       ],
-      image: "/image4.jpg"
+      image: "/image6.jpg"
     },
     {
       id: "tags",
@@ -43,12 +43,12 @@ export function Products() {
         "Cổng RFID",
         "Phần mềm tích hợp"
       ],
-      image: "/image6.jpg"
+      image: "/image4.jpg"
     }
   ];
 
   return (
-    <section className="bg-white w-full py-24 border-t border-zinc-100">
+    <section id="san-pham" className="bg-white w-full py-24 border-t border-zinc-100">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="text-center max-w-2xl mx-auto mb-16">

@@ -21,26 +21,60 @@ export function RegistrationModal({ isOpen, onClose, title = "Đăng Ký Tham D�
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
+
+    // Đọc URL Webhook từ file .env
+    // (Lưu ý: Biến phải bắt đầu bằng NEXT_PUBLIC_ để Next.js cho phép dùng ở phía Client)
+    const WEBHOOK_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEET_WEBHOOK_URL || ""; 
+
+    if (!WEBHOOK_URL) {
+      // 1. CHẠY GIẢ LẬP KHI CHƯA CẤU HÌNH (Hiện tại)
       setTimeout(() => {
-        setIsSuccess(false);
-        onClose();
-        // Reset form
-        setFormData({
-            name: "",
-            phone: "",
-            email: "",
-            appointmentDate: "Ngày 22/04/2026",
-            message: ""
-        });
-      }, 2000);
-    }, 1000);
+        finishSubmission();
+      }, 1000);
+      return;
+    }
+
+    // 2. CHẠY THỰC TẾ (Bắn data về Google Sheet)
+    try {
+      const formBody = new FormData();
+      formBody.append("name", formData.name);
+      formBody.append("phone", formData.phone);
+      formBody.append("email", formData.email);
+      formBody.append("appointmentDate", formData.appointmentDate);
+      formBody.append("message", formData.message);
+
+      await fetch(WEBHOOK_URL, {
+        method: "POST",
+        body: formBody,
+        mode: "no-cors" // Cần thiết để tránh lỗi CORS khi gọi báo về Google Script
+      });
+      // Với no-cors, fetch sẽ luôn thành công (không đọc được response thật)
+      finishSubmission();
+    } catch (error) {
+      console.error("Lỗi khi gửi form:", error);
+      setIsSubmitting(false);
+      alert("Đã có lỗi xảy ra. Hãy thử lại!");
+    }
+  };
+
+  const finishSubmission = () => {
+    setIsSubmitting(false);
+    setIsSuccess(true);
+    setTimeout(() => {
+      setIsSuccess(false);
+      onClose();
+      // Reset form
+      setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          appointmentDate: "Ngày 22/04/2026",
+          message: ""
+      });
+    }, 2000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -73,7 +107,7 @@ export function RegistrationModal({ isOpen, onClose, title = "Đăng Ký Tham D�
               className="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/70 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
-            </button>
+            </button>   
           </div>
 
           {/* Body */}

@@ -40,7 +40,7 @@ export function Testimonials() {
   ];
 
   return (
-    <section className="bg-zinc-50 dark:bg-zinc-900 w-full py-24">
+    <section id="cau-chuyen" className="bg-zinc-50 dark:bg-zinc-900 w-full py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header Section */}
         <div className="text-center max-w-4xl w-full mx-auto mb-16 flex flex-col items-center">
@@ -78,7 +78,7 @@ export function Testimonials() {
         </div>
 
         {/* Banner */}
-        <div className="w-full bg-blue-600 rounded-[24px] py-12 px-8 flex flex-col md:flex-row items-center justify-around gap-8 shadow-xl shadow-blue-600/20">
+        {/* <div className="w-full bg-blue-600 rounded-[24px] py-12 px-8 flex flex-col md:flex-row items-center justify-around gap-8 shadow-xl shadow-blue-600/20">
           <div className="text-center">
             <h3 className="text-5xl lg:text-6xl font-black text-white mb-2 tracking-tight">100+</h3>
             <p className="text-blue-100 font-medium text-[15px]">Doanh Nghiệp Sử Dụng Thành Công</p>
@@ -93,7 +93,7 @@ export function Testimonials() {
             <h3 className="text-5xl lg:text-6xl font-black text-white mb-2 tracking-tight">100+</h3>
             <p className="text-blue-100 font-medium text-[15px]">Bộ Kit</p>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

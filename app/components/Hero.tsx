@@ -25,10 +25,9 @@ export function Hero() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-[56px] font-black tracking-tight text-white mb-6 leading-[1.05]">
-                            <span className="block w-full">Giải Pháp RFID</span>
-                            <span className="block w-full">tích hợp AI</span>
-                            <span className="block mt-2 text-cyan-400">tự động</span>
+                        <h1 className="text-[22px] sm:text-2xl md:text-3xl lg:text-[38px] xl:text-[44px] font-black tracking-tight text-white mb-6 leading-[1.2]">
+                            <span className="block w-full">Giải pháp Quản lý tự động</span>
+                            <span className="block mt-1 text-cyan-400">bằng RFID tích hợp AI</span>
                         </h1>
 
                         <p className="mt-4 text-[17px] text-blue-100 max-w-lg mb-10 leading-relaxed font-medium">

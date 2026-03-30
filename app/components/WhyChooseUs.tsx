@@ -6,7 +6,7 @@ import { CheckCircle2 } from "lucide-react";
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-white dark:bg-zinc-50 w-full py-24">
+    <section id="giai-phap" className="bg-white dark:bg-zinc-50 w-full py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto mb-20 flex flex-col items-center">
@@ -28,19 +28,19 @@ export function WhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20 lg:mb-32">
           {/* Text Left */}
           <div className="order-2 lg:order-1 flex flex-col items-start pr-0 lg:pr-8">
-            <div className="bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider mb-6">
+            <div className="bg-red-100 text-red-600 text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider mb-4">
               VẤN ĐỀ
             </div>
-            <h3 className="text-3xl md:text-4xl font-black text-zinc-900 leading-tight tracking-tight mb-6">
-              Phần Lớn Doanh Nghiệp Việt Nam Vẫn Chưa Dám Tiếp Cận RFID
+            <h3 className="text-[26px] md:text-3xl lg:text-[32px] font-black text-zinc-900 leading-tight tracking-tight mb-4">
+              RFID đã vượt xa Barcode và QR Code, vậy vì sao doanh nghiệp Việt vẫn chưa dám thay đổi?
             </h3>
-            <p className="text-[15px] text-zinc-600 leading-relaxed mb-8">
+            <p className="text-[14.5px] text-zinc-600 leading-relaxed mb-5">
               Nhiều doanh nghiệp Việt Nam vẫn nghĩ <span className="text-red-600 font-bold">RFID là công nghệ xa xỉ, phức tạp</span> và chỉ dành cho các tập đoàn lớn.
             </p>
 
-            <div className="w-full bg-red-50/50 rounded-xl border-l-[4px] border-red-500 p-6 mb-8">
-              <h4 className="text-[15px] font-bold text-red-700 mb-4">Thực Tế Khó Khăn:</h4>
-              <ul className="space-y-4">
+            <div className="w-full bg-red-50/50 rounded-xl border-l-[4px] border-red-500 p-5 mb-5">
+              <h4 className="text-[14.5px] font-bold text-red-700 mb-3">Thực Tế Khó Khăn:</h4>
+              <ul className="space-y-2.5">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 rounded-sm bg-red-500 mt-2 flex-shrink-0" />
                   <p className="text-[14.5px] text-zinc-700"><span className="font-bold text-zinc-900">Chi phí cao</span> - Giải pháp nhập khẩu rất đắt đỏ</p>
@@ -83,19 +83,19 @@ export function WhyChooseUs() {
 
           {/* Text Right */}
           <div className="flex flex-col items-start pl-0 lg:pl-8">
-            <div className="bg-green-100/80 text-green-700 text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider mb-6">
+            <div className="bg-green-100/80 text-green-700 text-xs font-bold px-3 py-1 rounded-sm uppercase tracking-wider mb-4">
               GIẢI PHÁP
             </div>
-            <h3 className="text-3xl md:text-4xl font-black text-zinc-900 leading-tight tracking-tight mb-6">
+            <h3 className="text-[26px] md:text-3xl lg:text-[32px] font-black text-zinc-900 leading-tight tracking-tight mb-4">
               Xây Dựng Hệ Sinh Thái RFID "Made in Vietnam"
             </h3>
-            <p className="text-[15px] text-zinc-600 leading-relaxed mb-8">
+            <p className="text-[14.5px] text-zinc-600 leading-relaxed mb-5">
               Thay vì đi theo lối mòn của các giải pháp nhập khẩu vốn đắt đỏ, Nextwaves lựa chọn một hướng đi khác: <span className="text-green-600 font-bold">chủ động xây dựng toàn bộ hệ sinh thái RFID ngay trong nước</span>.
             </p>
 
-            <div className="w-full bg-green-50/50 rounded-xl border-l-[4px] border-green-500 p-6">
-              <h4 className="text-[15px] font-bold text-green-700 mb-4">Toàn Bộ Chuỗi Giá Trị:</h4>
-              <ul className="space-y-4">
+            <div className="w-full bg-green-50/50 rounded-xl border-l-[4px] border-green-500 p-5">
+              <h4 className="text-[14.5px] font-bold text-green-700 mb-3">Toàn Bộ Chuỗi Giá Trị:</h4>
+              <ul className="space-y-2.5">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
                   <p className="text-[14.5px] text-zinc-700"><span className="font-bold text-zinc-900">Thiết kế phần cứng</span> - Tối ưu cho Việt Nam</p>
